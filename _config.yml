@@ -1,9 +1,9 @@
-theme: jekyll-theme-cayman
-
 title: Noiseless Space
 description: A small ook it not the sounds you don't really hear.
+show_download: false
+google_analytics:
+theme: jekyll-theme-cayman
 
-show_download: "false"
 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.

@@ -1,0 +1,1204 @@
+<html>
+
+<head>
+  <title>D&D 4th Edition Online Character Sheet</title>
+  <link rel="stylesheet" type="text/css" href="css/charsheet_dnd_4th.css" />
+
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8122697-1']);
+    _gaq.push(['_setDomainName', 'kevinleung.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>D&D 4th Edition (4e) Online Character Sheet</h1>
+    </div>
+    <div class="content">
+      <form id="mainform">
+        <div style="display: none;">
+          <input type="text" id="i-half_level" name="half_level" class="mult" source=".5 level" />
+        </div>
+        <div id="s-overview" class="section">
+          <h3>Overview</h3>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><label for="i-name">Character Name</label></td>
+              <td><input type="text" id="i-name" name="name" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-player">Player Name</label></td>
+              <td><input type="text" id="i-player" name="player" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-level">Level</label></td>
+              <td><input type="text" id="i-level" name="level" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-class">Class</label></td>
+              <td><input type="text" id="i-class" name="class" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-paragon_path">Paragon Path</label></td>
+              <td><input type="text" id="i-paragon_path" name="paragon_path" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-epic_destiny">Epic Destiny</label></td>
+              <td><input type="text" id="i-epic_destiny" name="epic_destiny" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-xp">Total XP</label></td>
+              <td><input type="text" id="i-xp" name="xp" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-race">Race</label></td>
+              <td><input type="text" id="i-race" name="race" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-size">Size</label></td>
+              <td><input type="text" id="i-size" name="size" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-age">Age</label></td>
+              <td><input type="text" id="i-age" name="age" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-gender">Gender</label></td>
+              <td><input type="text" id="i-gender" name="gender" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-height">Height</label></td>
+              <td><input type="text" id="i-height" name="height" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-weight">Weight</label></td>
+              <td><input type="text" id="i-weight" name="weight" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-alignment">Alignment</label></td>
+              <td><input type="text" id="i-alignment" name="alignment" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-deity">Deity</label></td>
+              <td><input type="text" id="i-deity" name="deity" /></td>
+            </tr>
+            <tr>
+              <td><label for="i-affiliation">Affiliation</label></td>
+              <td><input type="text" id="i-affiliation" name="affiliation" /></td>
+            </tr>
+            <tr>
+              <td>Other Notes</td>
+              <td><textarea id="i-overview_other" name="overview_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-initiative" class="section">
+          <h3>Initiative</h3>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Score</th>
+              <th>Dex</th>
+              <th>1/2 Lvl</th>
+              <th>Misc</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-initiative" name="initiative" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td><input type="text" id="i-init_dex" name="init_dex" class="sum" source="dex" maxlength="50" /></td>
+              <td><input type="text" id="i-init_level" name="init_level" class="sum" source="half_level" maxlength="50" /></td>
+              <td><input type="text" id="i-init_misc" name="init_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+          </table>
+          </table>
+        </div>
+
+        <div id="s-ability_scores" class="section">
+          <h3>Ability Scores</h3>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Score</th>
+              <th>Ability</th>
+              <th>Mod</th>
+              <th>Mod + <br /> 1/2 Lvl</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-str_score" name="str_score" class="misc" source="" maxlength="50" /></td>
+              <td>Str</td>
+              <td><input type="text" id="i-str" name="str" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-str_plus_level" name="str_plus_level" class="sum" source="str half_level"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-con_score" name="con_score" class="misc" source="" maxlength="50" /></td>
+              <td>Con</td>
+              <td><input type="text" id="i-con" name="con" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-con_plus_level" name="con_plus_level" class="sum" source="con half_level"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-dex_score" name="dex_score" class="misc" source="" maxlength="50" /></td>
+              <td>Dex</td>
+              <td><input type="text" id="i-dex" name="dex" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-dex_plus_level" name="dex_plus_level" class="sum" source="dex half_level"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-int_score" name="int_score" class="misc" source="" maxlength="50" /></td>
+              <td>Int</td>
+              <td><input type="text" id="i-int" name="int" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-int_plus_level" name="int_plus_level" class="sum" source="int half_level"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-wis_score" name="wis_score" class="misc" source="" maxlength="50" /></td>
+              <td>Wis</td>
+              <td><input type="text" id="i-wis" name="wis" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-wis_plus_level" name="wis_plus_level" class="sum" source="wis half_level"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-cha_score" name="cha_score" class="misc" source="" maxlength="50" /></td>
+              <td>Cha</td>
+              <td><input type="text" id="i-cha" name="cha" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-cha_plus_level" name="cha_plus_level" class="sum" source="cha half_level"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td>Other Notes</td>
+              <td colspan="3"><textarea id="i-ability_scores_other" name="ability_scores_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-hit_points" class="section">
+          <h3>Hit Points</h3>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Max HP</th>
+              <td><input type="text" id="i-max_hp" name="max_hp" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <th>Bloodied</th>
+              <td><input type="text" id="i-bloodied" name="bloodied" class="mult" source="max_hp .5" maxlength="50" /></td>
+            </tr>
+          </table>
+          <h4>Healing Surges</h4>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Surge Value</th>
+              <td><input type="text" id="i-surge_value" name="surge_value" class="mult" source="max_hp .25" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <th>Surges/Day</th>
+              <td><input type="text" id="i-surges_per_day" name="surges_per_day" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <th>Surges Used</th>
+              <td><input type="text" id="i-surges_used" name="surges_used" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <th>Other Notes</th>
+              <td><textarea id="i-surges_other" name="surges_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+          <h4>Misc</h4>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Current HP</th>
+              <td><textarea id="i-cur_hp" name="cur_hp" maxlength="200"></textarea></td>
+            <tr>
+              <th>Temporary HP</th>
+              <td><textarea id="i-temp_hp" name="temp_hp" maxlength="200"></textarea></td>
+            <tr>
+              <th>Second Wind Used</th>
+              <td><input type="checkbox" id="i-second_wind" name="second_wind" /></td>
+            </tr>
+            <tr>
+              <th>Death Saving Throw Failures</th>
+              <td>
+                <input type="checkbox" id="i-death_failures-1" name="death_failures-1" />
+                <input type="checkbox" id="i-death_failures-2" name="death_failures-2" />
+                <input type="checkbox" id="i-death_failures-3" name="death_failures-3" />
+              </td>
+            </tr>
+            <tr>
+              <th>Saving Throw Mods</th>
+              <td><textarea id="i-saving_throw_mods" name="saving_throw_mods" maxlength="200"></textarea></td>
+            <tr>
+              <th>Resistances</th>
+              <td><textarea id="i-resistances" name="resistances" maxlength="200"></textarea></td>
+            <tr>
+              <th>Current Conditions and Effects</th>
+              <td><textarea id="i-cur_cond" name="cur_cond" maxlength="200"></textarea></td>
+
+          </table>
+        </div>
+
+        <div id="s-skills" class="section">
+          <h3>Skills</h3>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Bonus</th>
+              <th>Skill Name</th>
+              <th></th>
+              <th>Abil Mod<br />+ 1/2 Lvl</th>
+              <th>Trnd<br />(+5)</th>
+              <th>Armor<br />Penalty</th>
+              <th>Misc</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-acrobatics_bonus" name="acrobatics_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Acrobatics</td>
+              <td>dex</td>
+              <td><input type="text" id="i-acrobatics_base" name="acrobatics_base" class="sum" source="dex half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-acrobatics_trnd" name="acrobatics_trnd" class="" value="5" /></td>
+              <td><input type="text" id="i-acrobatics_armor_penalty" name="acrobatics_armor_penalty" class="sum" source="armor_penalty"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-acrobatics_misc" name="acrobatics_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-arcana_bonus" name="arcana_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>Arcana</td>
+              <td>int</td>
+              <td><input type="text" id="i-arcana_base" name="arcana_base" class="sum" source="int half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-arcana_trnd" name="arcana_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-arcana_misc" name="arcana_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-athletics_bonus" name="athletics_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Athletics</td>
+              <td>str</td>
+              <td><input type="text" id="i-athletics_base" name="athletics_base" class="sum" source="str half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-athletics_trnd" name="athletics_trnd" class="" value="5" /></td>
+              <td><input type="text" id="i-athletics_armor_penalty" name="athletics_armor_penalty" class="sum" source="armor_penalty"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-athletics_misc" name="athletics_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-bluff_bonus" name="bluff_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>Bluff</td>
+              <td>cha</td>
+              <td><input type="text" id="i-bluff_base" name="bluff_base" class="sum" source="cha half_level" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-bluff_trnd" name="bluff_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-bluff_misc" name="bluff_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-diplomacy_bonus" name="diplomacy_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Diplomacy</td>
+              <td>cha</td>
+              <td><input type="text" id="i-diplomacy_base" name="diplomacy_base" class="sum" source="cha half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-diplomacy_trnd" name="diplomacy_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-diplomacy_misc" name="diplomacy_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-dungeoneering_bonus" name="dungeoneering_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Dungeoneering</td>
+              <td>wis</td>
+              <td><input type="text" id="i-dungeoneering_base" name="dungeoneering_base" class="sum" source="wis half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-dungeoneering_trnd" name="dungeoneering_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-dungeoneering_misc" name="dungeoneering_misc" class="misc" source=""
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-endurance_bonus" name="endurance_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Endurance</td>
+              <td>con</td>
+              <td><input type="text" id="i-endurance_base" name="endurance_base" class="sum" source="con half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-endurance_trnd" name="endurance_trnd" class="" value="5" /></td>
+              <td><input type="text" id="i-endurance_armor_penalty" name="endurance_armor_penalty" class="sum" source="armor_penalty"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-endurance_misc" name="endurance_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-heal_bonus" name="heal_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>Heal</td>
+              <td>wis</td>
+              <td><input type="text" id="i-heal_base" name="heal_base" class="sum" source="wis half_level" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-heal_trnd" name="heal_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-heal_misc" name="heal_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-history_bonus" name="history_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>History</td>
+              <td>int</td>
+              <td><input type="text" id="i-history_base" name="history_base" class="sum" source="int half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-history_trnd" name="history_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-history_misc" name="history_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-insight_bonus" name="insight_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>Insight</td>
+              <td>wis</td>
+              <td><input type="text" id="i-insight_base" name="insight_base" class="sum" source="wis half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-insight_trnd" name="insight_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-insight_misc" name="insight_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-intimidate_bonus" name="intimidate_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Intimidate</td>
+              <td>cha</td>
+              <td><input type="text" id="i-intimidate_base" name="intimidate_base" class="sum" source="cha half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-intimidate_trnd" name="intimidate_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-intimidate_misc" name="intimidate_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-nature_bonus" name="nature_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>Nature</td>
+              <td>wis</td>
+              <td><input type="text" id="i-nature_base" name="nature_base" class="sum" source="wis half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-nature_trnd" name="nature_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-nature_misc" name="nature_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-perception_bonus" name="perception_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Perception</td>
+              <td>wis</td>
+              <td><input type="text" id="i-perception_base" name="perception_base" class="sum" source="wis half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-perception_trnd" name="perception_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-perception_misc" name="perception_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-religion_bonus" name="religion_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Religion</td>
+              <td>int</td>
+              <td><input type="text" id="i-religion_base" name="religion_base" class="sum" source="int half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-religion_trnd" name="religion_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-religion_misc" name="religion_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-stealth_bonus" name="stealth_bonus" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>Stealth</td>
+              <td>dex</td>
+              <td><input type="text" id="i-stealth_base" name="stealth_base" class="sum" source="dex half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-stealth_trnd" name="stealth_trnd" class="" value="5" /></td>
+              <td><input type="text" id="i-stealth_armor_penalty" name="stealth_armor_penalty" class="sum" source="armor_penalty"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-stealth_misc" name="stealth_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-streetwise_bonus" name="streetwise_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Streetwise</td>
+              <td>cha</td>
+              <td><input type="text" id="i-streetwise_base" name="streetwise_base" class="sum" source="cha half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-streetwise_trnd" name="streetwise_trnd" class="" value="5" /></td>
+              <td>N/A</td>
+              <td><input type="text" id="i-streetwise_misc" name="streetwise_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-thievery_bonus" name="thievery_bonus" class="sum-rest" source="rest"
+                  maxlength="50" /></td>
+              <td>Thievery</td>
+              <td>dex</td>
+              <td><input type="text" id="i-thievery_base" name="thievery_base" class="sum" source="dex half_level"
+                  maxlength="50" /></td>
+              <td><input type="checkbox" id="i-thievery_trnd" name="thievery_trnd" class="" value="5" /></td>
+              <td><input type="text" id="i-thievery_armor_penalty" name="thievery_armor_penalty" class="sum" source="armor_penalty"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-thievery_misc" name="thievery_misc" class="misc" source="" maxlength="50" /></td>
+            </tr>
+          </table>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>Other Notes</td>
+              <td><textarea id="i-skills_other" name="skills_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-defenses" class="section">
+          <h3>Defenses</h3>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Armor</th>
+              <td><input type="text" id="i-armor" name="armor" class="misc long" source="" maxlength="50" /></td>
+            <tr>
+              <th>Armor Bonus</th>
+              <td><input type="text" id="i-armor_bonus" name="armor_bonus" class="misc" source="" maxlength="50" /></td>
+            <tr>
+              <th><label for="i-armor_abil">Light/No Armor?</label></th>
+              <td><input type="checkbox" id="i-armor_abil" name="armor_abil" class="" value="1" /></td>
+            <tr>
+              <th>Armor Penalty</th>
+              <td><input type="text" id="i-armor_penalty" name="armor_penalty" class="misc" source="" maxlength="50" /></td>
+            <tr>
+              <th>Other Notes</th>
+              <td><textarea id="i-defenses_other" name="defenses_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Score</th>
+              <th>Defense</th>
+              <th>10 + <br/>1/2 Lvl</th>
+              <th>Abil</th>
+              <th>Class</th>
+              <th>Feat</th>
+              <th>Enh</th>
+              <th>Armor/<br />Misc</th>
+              <th>Misc</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-ac" name="ac" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>AC</td>
+              <td><input type="text" id="i-ac_base_plus_level" name="ac_base_plus_level" class="sum" source="10 half_level"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-ac_abil" name="ac_abil" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ac_class" name="ac_class" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ac_feat" name="ac_feat" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ac_enh" name="ac_enh" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ac_misc1" name="ac_misc1" class="sum" source="armor_bonus" maxlength="50" /></td>
+              <td><input type="text" id="i-ac_misc2" name="ac_misc2" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;" colspan="9"><small>Conditional Bonuses</small><br /><textarea id="i-ac_cond_bonus"
+                  name="ac_cond_bonus" class="" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-fort" name="fort" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>FORT</td>
+              <td><input type="text" id="i-fort_base_plus_level" name="fort_base_plus_level" class="sum" source="10 half_level"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-fort_abil" name="fort_abil" class="max" source="str con" maxlength="50" /></td>
+              <td><input type="text" id="i-fort_class" name="fort_class" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-fort_feat" name="fort_feat" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-fort_enh" name="fort_enh" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-fort_misc1" name="fort_misc1" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-fort_misc2" name="fort_misc2" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;" colspan="9"><small>Conditional Bonuses</small><br /><textarea id="i-fort_cond_bonus"
+                  name="fort_cond_bonus" class="" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-ref" name="ref" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>REF</td>
+              <td><input type="text" id="i-ref_base_plus_level" name="ref_base_plus_level" class="sum" source="10 half_level"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-ref_abil" name="ref_abil" class="max" source="dex int" maxlength="50" /></td>
+              <td><input type="text" id="i-ref_class" name="ref_class" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ref_feat" name="ref_feat" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ref_enh" name="ref_enh" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ref_misc1" name="ref_misc1" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-ref_misc2" name="ref_misc2" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;" colspan="9"><small>Conditional Bonuses</small><br /><textarea id="i-ref_cond_bonus"
+                  name="ref_cond_bonus" class="" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-will" name="will" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td>WILL</td>
+              <td><input type="text" id="i-will_base_plus_level" name="will_base_plus_level" class="sum" source="10 half_level"
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-will_abil" name="will_abil" class="max" source="wis cha" maxlength="50" /></td>
+              <td><input type="text" id="i-will_class" name="will_class" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-will_feat" name="will_feat" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-will_enh" name="will_enh" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-will_misc1" name="will_misc1" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-will_misc2" name="will_misc2" class="misc" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;" colspan="9"><small>Conditional Bonuses</small><br /><textarea id="i-will_cond_bonus"
+                  name="will_cond_bonus" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-action_points" class="section">
+          <h3>Action Points</h3>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Action Points</th>
+              <td><input type="text" id="i-action_points" name="action_points" class="" source="" maxlength="50" /></td>
+            </tr>
+            <tr>
+              <th>Additional Effects</th>
+              <td><textarea id="i-action_points_effects" name="action_points_effects" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-race_features" class="section">
+          <h3>Race Features</h3>
+          <textarea id="i-race_features" name="race_features" rows="8" maxlength="240"></textarea>
+        </div>
+
+        <div id="s-class_features" class="section">
+          <h3>Class / Path / Destiny Features</h3>
+          <textarea id="i-class_features" name="class_features" rows="15" maxlength="450"></textarea>
+        </div>
+
+        <div id="s-languages" class="section">
+          <h3>Languages Known</h3>
+          <textarea id="i-languages" name="languages" rows="4" maxlength="450"></textarea>
+          </table>
+        </div>
+
+        <div id="s-movement" class="section">
+          <h3>Movement</h3>
+          <p>Speed (Spaces)</p>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Score</th>
+              <th>Base</th>
+              <th>Armor</th>
+              <th>Item</th>
+              <th>Misc</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-speed" name="speed" class="sum-rest" source="rest" maxlength="50" /></td>
+              <td><input type="text" id="i-speed_base" name="speed_base" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-speed_armor" name="speed_armor" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-speed_item" name="speed_item" class="misc" source="" maxlength="50" /></td>
+              <td><input type="text" id="i-speed_misc" name="speed_misc" class="misc" source="" maxlength="50" /></td>
+          </table>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>Other Notes</td>
+              <td><textarea id="i-movement_other" name="movement_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-senses" class="section">
+          <h3>Senses</h3>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Score</th>
+              <th>Passive Sense</th>
+              <th>Base</th>
+              <th>Skill Bonus</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-insight_sense" name="insight_sense" class="sum" source="insight_sense_bonus 10"
+                  maxlength="50" /></td>
+              <td>Passive Insight</td>
+              <td>10 + </td>
+              <td><input type="text" id="i-insight_sense_bonus" name="insight_sense_bonus" class="sum" source="insight_bonus"
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-perception_sense" name="perception_sense" class="sum" source="perception_sense_bonus 10"
+                  maxlength="50" /></td>
+              <td>Passive Perception</td>
+              <td>10 + </td>
+              <td><input type="text" id="i-perception_sense_bonus" name="perception_sense_bonus" class="sum" source="perception_bonus"
+                  maxlength="50" /></td>
+            </tr>
+          </table>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>Other Notes</td>
+              <td><textarea id="i-senses_other" name="senses_other" class="" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+
+        </div>
+
+        <div id="s-attack" class="section">
+          <h3>Attack/Damage Workspace</h3>
+          <div class="attack-subsection">
+            <h4>Ability 1</h4><input type="text" id="i-attack_name-1" name="attack_name-1" class="" source="" maxlength="50" />
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Att Bonus</th>
+                <th>1/2 Lvl</th>
+                <th>Abil</th>
+                <th>Class</th>
+                <th>Prof</th>
+                <th>Feat</th>
+                <th>Enh</th>
+                <th>Misc</th>
+              </tr>
+              <tr>
+                <td><input type="text" id="i-attack_bonus-1" name="attack_bonus-1" class="sum-rest" source="rest"
+                    maxlength="50" /></td>
+                <td><input type="text" id="i-attack_half_level-1" name="attack_half_level-1" class="sum" source="half_level"
+                    maxlength="50" /></td>
+                <td><input type="text" id="i-attack_ability-1" name="attack_ability-1" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_class-1" name="attack_class-1" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_prof-1" name="attack_prof-1" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_feat-1" name="attack_feat-1" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_enh-1" name="attack_enh-1" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_misc-1" name="attack_misc-1" class="misc" source="" maxlength="50" /></td>
+              </tr>
+              <table cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Damage</th>
+                  <th>Abil</th>
+                  <th>Feat</th>
+                  <th>Enh</th>
+                  <th>Misc</th>
+                  <th>Misc</th>
+                </tr>
+                <tr>
+                  <td><input type="text" id="i-damage-1" name="damage-1" class="" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_ability-1" name="damage_ability-1" class="misc" source=""
+                      maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_feat-1" name="damage_feat-1" class="misc" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_enh-1" name="damage_enh-1" class="misc" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_misc-1" name="damage_misc-1" class="misc" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_misc2-1" name="damage_misc2-1" class="misc" source="" maxlength="50" /></td>
+                </tr>
+              </table><span>Other</span><textarea id="i-attack_other-1" name="attack_other-1" class="misc" maxlength="500"></textarea>
+          </div>
+          <div class="attack-subsection">
+            <h4>Ability 2</h4><input type="text" id="i-attack_name-2" name="attack_name-2" class="" source="" maxlength="50" />
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Att Bonus</th>
+                <th>1/2 Lvl</th>
+                <th>Abil</th>
+                <th>Class</th>
+                <th>Prof</th>
+                <th>Feat</th>
+                <th>Enh</th>
+                <th>Misc</th>
+              </tr>
+              <tr>
+                <td><input type="text" id="i-attack_bonus-2" name="attack_bonus-2" class="sum-rest" source="rest"
+                    maxlength="50" /></td>
+                <td><input type="text" id="i-attack_half_level-2" name="attack_half_level-2" class="sum" source="half_level"
+                    maxlength="50" /></td>
+                <td><input type="text" id="i-attack_ability-2" name="attack_ability-2" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_class-2" name="attack_class-2" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_prof-2" name="attack_prof-2" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_feat-2" name="attack_feat-2" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_enh-2" name="attack_enh-2" class="misc" source="" maxlength="50" /></td>
+                <td><input type="text" id="i-attack_misc-2" name="attack_misc-2" class="misc" source="" maxlength="50" /></td>
+              </tr>
+              <table cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Damage</th>
+                  <th>Abil</th>
+                  <th>Feat</th>
+                  <th>Enh</th>
+                  <th>Misc</th>
+                  <th>Misc</th>
+                </tr>
+                <tr>
+                  <td><input type="text" id="i-damage-2" name="damage-2" class="" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_ability-2" name="damage_ability-2" class="misc" source=""
+                      maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_feat-2" name="damage_feat-2" class="misc" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_enh-2" name="damage_enh-2" class="misc" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_misc-2" name="damage_misc-2" class="misc" source="" maxlength="50" /></td>
+                  <td><input type="text" id="i-damage_misc2-2" name="damage_misc2-2" class="misc" source="" maxlength="50" /></td>
+                </tr>
+              </table><span>Other</span><textarea id="i-attack_other-2" name="attack_other-2" class="misc" maxlength="500"></textarea>
+          </div>
+        </div>
+
+        <div id="s-basic_attacks" class="section">
+          <h3>Basic Attacks</h3>
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <th>Att</th>
+              <th></th>
+              <th>Def</th>
+              <th>Weapon/Power</th>
+              <th>Damage</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-basic_attack-1" name="basic_attack-1" class="misc" source="" maxlength="50" /></td>
+              <td>vs</td>
+              <td><input type="text" id="i-basic_attack_def-1" name="basic_attack_def-1" class="short" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_weapon-1" name="basic_attack_weapon-1" class="" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_damage-1" name="basic_attack_damage-1" class="" source=""
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-basic_attack-2" name="basic_attack-2" class="misc" source="" maxlength="50" /></td>
+              <td>vs</td>
+              <td><input type="text" id="i-basic_attack_def-2" name="basic_attack_def-2" class="short" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_weapon-2" name="basic_attack_weapon-2" class="" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_damage-2" name="basic_attack_damage-2" class="" source=""
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-basic_attack-3" name="basic_attack-3" class="misc" source="" maxlength="50" /></td>
+              <td>vs</td>
+              <td><input type="text" id="i-basic_attack_def-3" name="basic_attack_def-3" class="short" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_weapon-3" name="basic_attack_weapon-3" class="" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_damage-3" name="basic_attack_damage-3" class="" source=""
+                  maxlength="50" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-basic_attack-4" name="basic_attack-4" class="misc" source="" maxlength="50" /></td>
+              <td>vs</td>
+              <td><input type="text" id="i-basic_attack_def-4" name="basic_attack_def-4" class="short" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_weapon-4" name="basic_attack_weapon-4" class="" source=""
+                  maxlength="50" /></td>
+              <td><input type="text" id="i-basic_attack_damage-4" name="basic_attack_damage-4" class="" source=""
+                  maxlength="50" /></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-feats" class="section">
+          <h3>Feats</h3>
+          <textarea id="i-feats" name="feats" rows="20" maxlength="600"></textarea>
+        </div>
+
+        <div id="s-powers" class="section">
+          <h3>Power Index</h3>
+          <p>Check off powers as you use them</p>
+          <table class="vertical-table" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="3">
+                <h4>At-Will Powers</h4>
+              </td>
+            </tr>
+            <tr>
+              <th>Power</th>
+              <th></th>
+              <th>Additional Notes</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-at_will-1" name="at_will-1" class="long" source="" maxlength="50" /></td>
+              <td></td>
+              <td><textarea id="i-at_will_desc-1" name="at_will_desc-1" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-at_will-2" name="at_will-2" class="long" source="" maxlength="50" /></td>
+              <td></td>
+              <td><textarea id="i-at_will_desc-2" name="at_will_desc-2" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-at_will-3" name="at_will-3" class="long" source="" maxlength="50" /></td>
+              <td></td>
+              <td><textarea id="i-at_will_desc-3" name="at_will_desc-3" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-at_will-4" name="at_will-4" class="long" source="" maxlength="50" /></td>
+              <td></td>
+              <td><textarea id="i-at_will_desc-4" name="at_will_desc-4" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-at_will-5" name="at_will-5" class="long" source="" maxlength="50" /></td>
+              <td></td>
+              <td><textarea id="i-at_will_desc-5" name="at_will_desc-5" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-at_will-6" name="at_will-6" class="long" source="" maxlength="50" /></td>
+              <td></td>
+              <td><textarea id="i-at_will_desc-6" name="at_will_desc-6" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <h4>Encounter Powers</h4>
+              </td>
+            </tr>
+            <tr>
+              <th>Power</th>
+              <th>Used?</th>
+              <th>Additional Notes</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-1" name="encounter-1" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-1" name="encounter_used-1" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-1" name="encounter_desc-1" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-2" name="encounter-2" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-2" name="encounter_used-2" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-2" name="encounter_desc-2" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-3" name="encounter-3" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-3" name="encounter_used-3" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-3" name="encounter_desc-3" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-4" name="encounter-4" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-4" name="encounter_used-4" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-4" name="encounter_desc-4" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-5" name="encounter-5" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-5" name="encounter_used-5" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-5" name="encounter_desc-5" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-6" name="encounter-6" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-6" name="encounter_used-6" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-6" name="encounter_desc-6" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-7" name="encounter-7" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-7" name="encounter_used-7" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-7" name="encounter_desc-7" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-encounter-8" name="encounter-8" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-encounter_used-8" name="encounter_used-8" class="reset-enc" value="" /></td>
+              <td><textarea id="i-encounter_desc-8" name="encounter_desc-8" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <h4>Daily Powers</h4>
+              </td>
+            </tr>
+            <tr>
+              <th>Power</th>
+              <th>Used?</th>
+              <th>Additional Notes</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-daily-1" name="daily-1" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-daily_used-1" name="daily_used-1" class="reset-daily" value="" /></td>
+              <td><textarea id="i-daily_desc-1" name="daily_desc-1" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-daily-2" name="daily-2" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-daily_used-2" name="daily_used-2" class="reset-daily" value="" /></td>
+              <td><textarea id="i-daily_desc-2" name="daily_desc-2" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-daily-3" name="daily-3" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-daily_used-3" name="daily_used-3" class="reset-daily" value="" /></td>
+              <td><textarea id="i-daily_desc-3" name="daily_desc-3" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-daily-4" name="daily-4" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-daily_used-4" name="daily_used-4" class="reset-daily" value="" /></td>
+              <td><textarea id="i-daily_desc-4" name="daily_desc-4" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-daily-5" name="daily-5" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-daily_used-5" name="daily_used-5" class="reset-daily" value="" /></td>
+              <td><textarea id="i-daily_desc-5" name="daily_desc-5" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-daily-6" name="daily-6" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-daily_used-6" name="daily_used-6" class="reset-daily" value="" /></td>
+              <td><textarea id="i-daily_desc-6" name="daily_desc-6" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <h4>Utility Powers</h4>
+              </td>
+            </tr>
+            <tr>
+              <th>Power</th>
+              <th>Used?</th>
+              <th>Additional Notes</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-utility-1" name="utility-1" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-utility_used-1" name="utility_used-1" class="" value="" /></td>
+              <td><textarea id="i-utility_desc-1" name="utility_desc-1" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-utility-2" name="utility-2" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-utility_used-2" name="utility_used-2" class="" value="" /></td>
+              <td><textarea id="i-utility_desc-2" name="utility_desc-2" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-utility-3" name="utility-3" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-utility_used-3" name="utility_used-3" class="" value="" /></td>
+              <td><textarea id="i-utility_desc-3" name="utility_desc-3" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-utility-4" name="utility-4" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-utility_used-4" name="utility_used-4" class="" value="" /></td>
+              <td><textarea id="i-utility_desc-4" name="utility_desc-4" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-utility-5" name="utility-5" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-utility_used-5" name="utility_used-5" class="" value="" /></td>
+              <td><textarea id="i-utility_desc-5" name="utility_desc-5" class="expand" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="i-utility-6" name="utility-6" class="long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-utility_used-6" name="utility_used-6" class="" value="" /></td>
+              <td><textarea id="i-utility_desc-6" name="utility_desc-6" class="expand" maxlength="500"></textarea></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-magic_items" class="section">
+          <h3>Magic Item Index</h3>
+          <table class="vertical-table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>weapon</th>
+              <td><input type="text" id="i-item-1" name="item-1" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-1" name="item_used-1" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>weapon</th>
+              <td><input type="text" id="i-item-2" name="item-2" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-2" name="item_used-2" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>weapon</th>
+              <td><input type="text" id="i-item-3" name="item-3" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-3" name="item_used-3" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>weapon</th>
+              <td><input type="text" id="i-item-4" name="item-4" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-4" name="item_used-4" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>armor</th>
+              <td><input type="text" id="i-item-5" name="item-5" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-5" name="item_used-5" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>arms</th>
+              <td><input type="text" id="i-item-6" name="item-6" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-6" name="item_used-6" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>feet</th>
+              <td><input type="text" id="i-item-7" name="item-7" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-7" name="item_used-7" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>hands</th>
+              <td><input type="text" id="i-item-8" name="item-8" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-8" name="item_used-8" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>head</th>
+              <td><input type="text" id="i-item-9" name="item-9" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-9" name="item_used-9" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>neck</th>
+              <td><input type="text" id="i-item-10" name="item-10" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-10" name="item_used-10" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>ring</th>
+              <td><input type="text" id="i-item-11" name="item-11" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-11" name="item_used-11" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>ring</th>
+              <td><input type="text" id="i-item-12" name="item-12" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-12" name="item_used-12" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th>waist</th>
+              <td><input type="text" id="i-item-13" name="item-13" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-13" name="item_used-13" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-14" name="item-14" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-14" name="item_used-14" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-15" name="item-15" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-15" name="item_used-15" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-16" name="item-16" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-16" name="item_used-16" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-17" name="item-17" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-17" name="item_used-17" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-18" name="item-18" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-18" name="item_used-18" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-19" name="item-19" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-19" name="item_used-19" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-20" name="item-20" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-20" name="item_used-20" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-21" name="item-21" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-21" name="item_used-21" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-22" name="item-22" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-22" name="item_used-22" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-23" name="item-23" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-23" name="item_used-23" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-24" name="item-24" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-24" name="item_used-24" class="" value="" /></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><input type="text" id="i-item-25" name="item-25" class="extra-long" source="" maxlength="50" /></td>
+              <td><input type="checkbox" id="i-item_used-25" name="item_used-25" class="" value="" /></td>
+            </tr>
+          </table>
+          <table class="vertical-table">
+            <tr>
+              <td colspan="4"><strong>Daily Item Powers per Day</strong></td>
+            </tr>
+            <tr>
+              <td>Heroic (1-10)</td>
+              <td><input type="checkbox" id="i-heroic_power_1" name="heroic_power_1" class="" value="" /></td>
+              <td>Milestone</td>
+              <td><input type="checkbox" id="i-heroic_power_milestone_1" name="heroic_power_milestone_1" class="" value="" />/<input
+                  type="checkbox" id="i-heroic_power_milestone_2" name="heroic_power_milestone_2" class="" value="" />/<input
+                  type="checkbox" id="i-heroic_power_milestone_3" name="heroic_power_milestone_3" class="" value="" />/<input
+                  type="checkbox" id="i-heroic_power_milestone_4" name="heroic_power_milestone_4" class="" value="" /></td>
+            </tr>
+            <tr>
+              <td>Paragon (11-20)</td>
+              <td><input type="checkbox" id="i-paragon_power_1" name="paragon_power_1" class="" value="" /><input type="checkbox"
+                  id="i-paragon_power_2" name="paragon_power_2" class="" value="" /></td>
+              <td>Milestone</td>
+              <td><input type="checkbox" id="i-paragon_power_milestone_1" name="paragon_power_milestone_1" class=""
+                  value="" />/<input type="checkbox" id="i-paragon_power_milestone_2" name="paragon_power_milestone_2"
+                  class="" value="" />/<input type="checkbox" id="i-paragon_power_milestone_3" name="paragon_power_milestone_3"
+                  class="" value="" />/<input type="checkbox" id="i-paragon_power_milestone_4" name="paragon_power_milestone_4"
+                  class="" value="" /></td>
+            </tr>
+            <tr>
+              <td>Epic (21-30)</td>
+              <td><input type="checkbox" id="i-epic_power_1" name="epic_power_1" class="" value="" /><input type="checkbox"
+                  id="i-epic_power_2" name="epic_power_2" class="" value="" /><input type="checkbox" id="i-epic_power_3"
+                  name="epic_power_3" class="" value="" /></td>
+              <td>Milestone</td>
+              <td><input type="checkbox" id="i-epic_power_milestone_1" name="epic_power_milestone_1" class="" value="" />/<input
+                  type="checkbox" id="i-epic_power_milestone_2" name="epic_power_milestone_2" class="" value="" />/<input
+                  type="checkbox" id="i-epic_power_milestone_3" name="epic_power_milestone_3" class="" value="" />/<input
+                  type="checkbox" id="i-epic_power_milestone_4" name="epic_power_milestone_4" class="" value="" /></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="s-equipment" class="section">
+          <h3>Other Equipment</h3>
+          <textarea id="i-equipment" name="equipment" rows="10" maxlength="300"></textarea>
+        </div>
+
+        <div id="s-rituals" class="section">
+          <h3>Rituals</h3>
+          <textarea id="i-rituals" name="rituals" rows="10" maxlength="300"></textarea>
+        </div>
+
+        <div id="s-coins" class="section">
+          <h3>Coins and Other Wealth</h3>
+          <textarea id="i-coins" name="coins" rows="8" maxlength="240"></textarea>
+        </div>
+
+        <div id="s-characteristics" class="section">
+          <h3>Characteristics</h3>
+          <h4>Personality Traits</h4>
+          <textarea id="i-personality" name="personality" rows="8" maxlength="240"></textarea>
+          <h4>Mannerisms and Appearance</h4>
+          <textarea id="i-appearance" name="appearance" rows="8" maxlength="240"></textarea>
+          <h4>Character Background</h4>
+          <textarea id="i-background" name="background" rows="8" maxlength="240"></textarea>
+        </div>
+
+        <div id="s-companions" class="section">
+          <h3>Companions</h3>
+          <textarea id="i-companions" name="companions" rows="10" maxlength="300"></textarea>
+        </div>
+
+        <div id="s-notes" class="section">
+          <h3>Other Notes</h3>
+          <textarea id="i-notes" name="notes" rows="12" maxlength="360"></textarea>
+        </div>
+
+      </form>
+    </div>
+    <div class="toolbox">
+      <a href="/dnd/about.html">About the 4e online character sheet</a>
+      <h3>Functions</h3>
+      <ul class="functions">
+        <li><input type="button" id="calc-btn" value="Calculate Fields" title="Recalculate various content on the sheet" /></li>
+        <li><input type="button" id="reset-enc-btn" value="Reset Encounter" title="Reset certain fields after an encounter" /></li>
+        <li><input type="button" id="reset-daily-btn" value="Reset Daily" title="Reset certain fields after a day or rest" /></li>
+        <li><input type="button" id="load-btn" value="Load" /><input type="text" id="load-id" value="" title="Load your character from the database using the id given" /></li>
+        <li><input type="button" id="save-btn" value="Save" title="Save your character to a new id" /><input type="text"
+            id="save-id" value="" title="Save your character with the given identifier" maxlength="20"></li>
+      </ul>
+      <h3>Navigation</h3>
+      <ul class="nav">
+
+      </ul>
+
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.autogrow-textarea.js"></script>
+  <script type="text/javascript" src="charsheet_dnd_4th.js"></script>
+</body>
+
+</html>
